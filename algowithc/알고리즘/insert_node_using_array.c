@@ -6,11 +6,21 @@ char c;
 
 int main()
 {
+    
     int i, search_data, insert_data;
     c = 'C';
 
+    /*
+    printf("%c %d\n", my_data[0], my_data[0]); //ASCII 값 출력해서 크기 확인
+    printf("%c %d\n", my_data[1], my_data[1]); //ASCII 값 출력해서 크기 확인
+    printf("%c %d\n", c, c); //ASCII 값 출력해서 크기 확인
+    printf("%c %d\n", my_data[2], my_data[2]); //ASCII 값 출력해서 크기 확인
+    printf("%c %d\n", my_data[3], my_data[3]); //ASCII 값 출력해서 크기 확인
+    */
+
+    
     for(i = 0; i < 5; i++)
-    {
+    
         printf("%2c", my_data[i]);
         printf("\n");
 
@@ -20,7 +30,11 @@ int main()
                 break;
         }
 
+       // printf("%d", i);
+
+        
         search_data = my_data[i];
+        
         my_data[i] = c;
         i++;
 
@@ -35,7 +49,11 @@ int main()
         {
             printf("%2c", my_data[i]);
         }    
-    }
+        
+
+
+
+    
 
 
     return 0;
