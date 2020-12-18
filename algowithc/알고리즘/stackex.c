@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//스택 구조 예제 
+
 //배열로 스택 구현하기
 #define MAXSIZE 10 // 스택의 크기 정의
 int stack[MAXSIZE]; //스택의 긴 통
