@@ -1,8 +1,55 @@
 #include <stdio.h>
 
-//다중 포인터 연습
+int add (int num1, int num2)
+{
+    return num2 - num1;
+}
+
+int swap(int* num1, int* num2) {
+
+    int temp;
+
+    temp = *num1;
+    *num1 = *num2;
+    *num2 = temp;
+
+    return 0;
+}
+
+
 int main()
-{   /*
+{   
+    /*
+    int a = 5;
+    int b = 10;
+
+    printf("a=%d\nb=%d\n", a, b);
+
+    swap(&a, &b);
+
+    printf("a=%d\nb=%d\n", a, b);
+
+    int *ptr1;
+    int *ptr2;
+
+    ptr1 = &a;
+    ptr2 = &b;
+
+    printf("address of a is %x ", &a);
+    printf("\nvalue of ptr is %d ", *ptr1);
+    printf("\nb - a = %d ", add(*ptr1,*ptr2));
+    */
+
+   char arr[6]= {"hello"};
+
+   char *ptr;
+   ptr = &arr[0];
+
+   printf("%c", *(ptr+1)); 
+
+
+    //다중 포인터 연습
+    /*
     int a = 1;
     int *p1 = &a;
     printf("p1의 값은? : %d\n", *p1);
@@ -80,6 +127,7 @@ int main()
         */
 
        //포인터 배열
+       /*()
        int a = 1, b = 2, c = 3;
        int *p[3] = {&a, &b, &c};
 
@@ -89,7 +137,7 @@ int main()
 
        printf("%d %d %d\n", a, b, c);
        printf("%d %d %d\n", *p[0], *p[1], *p[2]);
-
+        */
 
   
     return 0;
