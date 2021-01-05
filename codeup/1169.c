@@ -7,7 +7,7 @@ int main()
     scanf("%d", &age);
     since = 2012 - age + 1;
 
-    if(since >= 1900 && since <= 2000)
+    if(since >= 1900 && since < 2000)
     {
         printf("%d %d", since%1900, 1);
     }
