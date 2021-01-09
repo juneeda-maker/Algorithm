@@ -1,3 +1,4 @@
+#include <stdio.h>
 int main()
 {
     int year, month;
@@ -16,10 +17,16 @@ int main()
             printf("29");
             break;
         }
+        else if(year%4 == 0 && year%100 !=0)
+        {
+            printf("29");
+            break;
+        }
         else{
             printf("28");
             break;
         }
+
 
         case 3:
         printf("31");
