@@ -15,12 +15,12 @@ using namespace std;
     for(i = 0; i < numbers.size() - 1; i++) {
         for(j = i + 1; j < numbers.size(); j++) {
             sum = numbers[i] + numbers[j];
-            if(find(answer.begin(), answer.end(), sum) == answer.end())
+            if(find(answer.begin(), answer.end(), sum) == answer.end()) //범위 내에서 sum을 찾지 못한경우 : find는 찾지 못할시 end를 반환.
                 answer.push_back(sum);
         }
     }
     
-    sort(answer.begin(), answer.end());  
+    sort(answer.begin(), answer.end());  //sort(first,last) 범위 내의 원소들을 오름차순으로 정렬 
     
     return answer;
 }
