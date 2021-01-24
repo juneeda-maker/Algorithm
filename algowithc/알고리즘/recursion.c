@@ -9,6 +9,7 @@ int main(void)
    // scanf("%d", &height);
 
     draw(height);
+    
 }
 
 /*
