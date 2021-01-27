@@ -43,7 +43,7 @@ void Push(Stack * sp, int data){    //스택의 push
  
 int Pop(Stack * sp){   
     if(IsEmpty(sp) == TRUE) 
-        return -1; //꽉차서 데이터 추가 하지 못하는 경우 
+        return -1; //들어 있는 정수가 없는 경우
  
    
     return sp->arr[(sp->top)--];
