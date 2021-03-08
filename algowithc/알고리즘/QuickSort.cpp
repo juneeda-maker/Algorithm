@@ -1,13 +1,24 @@
 #include <stdio.h>
 
 int number = 10;
-int data[10] = {1,10,5,8,7,6,4,3,2,9};
+int data[] = {1,10,5,8,7,6,4,3,2,9};
+
+void show()
+{
+    int i;
+    for(int i = 0; i < number; i++)
+    {
+        printf("%d ", data[i]);
+    }
+    
+}
 
 void quickSort(int *data, int start, int end)
 {
     if(start >= end) //원소가 1개인 경우
     {
-
+        printf("**%d %d 종료한다", start, end);
+        return;
     }
 
     int key = start; //키(피벗 값)는 첫번째 원소 
@@ -17,7 +28,7 @@ void quickSort(int *data, int start, int end)
 
     while(i <= j)//엇갈릴 때까지 반복
     {
-        while(data[i] <= data[key]){ //키 값보다 큰 값을 만날때 까지
+        while(i <= end && data[i] <= data[key]){ //키 값보다 큰 값을 만날때 까지
             i++;
         }
         while(data[j] >= data[key] && j > start) //키 값보다 작은 값을 만날때 까지
@@ -37,16 +48,15 @@ void quickSort(int *data, int start, int end)
             data[i] = temp;
         }
     }
-
-    quickSort(data, start, j-1);
+    printf("^^j입니다 %d", j);
+    quickSort(data, start, j-1); //한번 정렬이 끝나면 그상태에서 왼쪽과 오른쪽을 나눠 다시 정렬을 해주기 위한 재귀함수
     quickSort(data, j+1, end);
 }
 
 int main(void)
 {
     quickSort(data, 0, number - 1);
-    for(int i = 0; i < number; i++)
-    {
-        printf("%d ", data[i]);
-    }
+    show();
+   return 0;
 }
+
