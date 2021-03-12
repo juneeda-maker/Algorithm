@@ -17,7 +17,6 @@ void quickSort(int *data, int start, int end)
 {
     if(start >= end) //원소가 1개인 경우
     {
-        printf("**%d %d 종료한다", start, end);
         return;
     }
 
@@ -35,20 +34,21 @@ void quickSort(int *data, int start, int end)
         {
             j--;
         }
-        if(i > j) //현재 엇갈린 상태면 키 값과 교체
+        if(i > j) //현재 엇갈린 상태면 키 값과 교체 //엇갈린 상태가 되어야 정렬이 완성 된 상태로 , 그 전까지는 계속 동일한 부분을 반복하게 된다.
         {
             temp = data[j];
             data[j] = data[key];
             data[key] = temp;
+
         }
         else
         {
             temp = data[j];
-            data[j] = data[i];
+            data[j] = data[i]; 
             data[i] = temp;
         }
     }
-    printf("^^j입니다 %d", j);
+    printf(" --i j입니다 %d %d-- ", i,j);
     quickSort(data, start, j-1); //한번 정렬이 끝나면 그상태에서 왼쪽과 오른쪽을 나눠 다시 정렬을 해주기 위한 재귀함수
     quickSort(data, j+1, end);
 }
