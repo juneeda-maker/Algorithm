@@ -13,7 +13,7 @@ void show()
     
 }
 
-void quickSort(int *data, int start, int end)
+void quickSort(int *data, int start, int end) //오른쪽 먼저 비교후 왼쪽 비교 
 {
     if(start >= end) //원소가 1개인 경우
     {
@@ -25,7 +25,7 @@ void quickSort(int *data, int start, int end)
     int j = end; //오른쪽 출발지점(작은 값 찾기)
     int temp;
 
-    while(i <= j)//엇갈릴 때까지 반복
+    while(i <= j)//엇갈릴 때까지 반복  즉 , 키 값이 변경 될때까지 
     {
         while(i <= end && data[i] <= data[key]){ //키 값보다 큰 값을 만날때 까지
             i++;
