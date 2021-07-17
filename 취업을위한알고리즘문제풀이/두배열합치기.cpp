@@ -6,11 +6,13 @@ using namespace std;
 int main()
 {
     int n, m,i;
+    int p1,p2,p3;
+
+    int a[101];
+    int b[101];
+    int c[300];
 
     cin >> n;
-
-    vector<int> a(n);
-
 
     for(i = 0; i < n; i++)
     {
@@ -19,17 +21,35 @@ int main()
 
     cin >> m;
 
-    vector<int> a(n+m);
-
-    for(int j = i; j < m; j++)
+    for(i = 0; i < m; i++)
     {
-        cin >> a[i];
+        cin >> b[i];
+    }
+    
+    p1 = 0;
+    p2 = 0;
+    p3 = 0;
+
+    while(p1 < n && p2 < m)
+    {
+        if(a[p1] < b[p2])
+        {
+            c[p3++] = a[p1++];
+        }
+        else
+        {
+            c[p3++] = b[p2++];
+        }
     }
 
-    for(i = 0; i < m+n; i++)
-    {
-        cin >> a[i];
-    }
+    while(p1 < n) 
+        c[p3++] = a[p1++];
 
+    while(p2 < m) 
+        c[p3++] = b[p2++];
+
+
+    for(i = 0; i < p3; i++)
+        cout << c[i] << " ";  
 
 }
