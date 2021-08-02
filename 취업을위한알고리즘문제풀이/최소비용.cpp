@@ -1,30 +1,28 @@
 #include <stdio.h>
 
-int n, m, max = 0, sum = 0;
+int n, m, min = 2147000000;
 int map[21][21];
-int ch[21][21];
+int ch[21];
 
-void DFS(int v)
+void DFS(int v, int sum)
 {
     int i;
     if(v == n)
     {
-        if(sum > max)
+        if(sum < min)
         {
-            max = sum;
-            sum = 0;
+            min = sum;
         }
     }
     else
     {
         for(i = 1; i <= n; i++)
         {
-            if(map[v][i] != 0 && ch[v][i] == 0)
+            if(map[v][i] > 0 && ch[i] == 0)
             {
-                ch[v][i] = 1;
-                sum += map[v][i];
-                DFS(i);
-                ch[v][i] = 0;
+                ch[i] = 1;
+                DFS(i, sum + map[v][i]);
+                ch[i] = 0;
             }
         }
     }
@@ -42,10 +40,10 @@ int main()
         map[a][b] = c;
     }
 
-    ch[1][1] = 1;
-    DFS(1);
+    ch[1] = 1;
+    DFS(1, 0);
 
-    printf("%d", max);
+    printf("%d", min);
 
     return 0;
 }
