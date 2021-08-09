@@ -20,11 +20,19 @@ public class Test {
 
         public static void main(String[] args)
         {
-            ArrayList<Integer> list  = new ArrayList<Integer>();
+            System.out.println("줄바꿈한다.");
+            System.out.println("줄바꿈한다.");
+            System.out.println("줄바꿈한다.");
 
-            list.add(0, 1);
-            list.add(0, 3);
-            System.out.println(list.get(0));
+
+            System.out.println(); 
+
+
+            System.out.print("이어서 출력한다.");
+            System.out.print("이어서 출력한다.");
+            System.out.print("이어서 출력한다.");
+
         }
     }
+    
 
