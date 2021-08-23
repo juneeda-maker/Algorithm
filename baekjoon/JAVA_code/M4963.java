@@ -4,8 +4,8 @@ import java.util.*;
 
 public class M4963 {
 
-    static int dx[] = {0,1,0,-1,1,-1,1,-1};
-    static int dy[] = {1,0,-1,0,1,-1,-1,1};
+    static int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0};
+    static int dy[] = {-1, 0, 1, 1, 1, 0, -1, -1};
     static boolean visit[][];
     static int island[][];
     static int count;
@@ -19,25 +19,25 @@ public class M4963 {
             w = sc.nextInt();
             h = sc.nextInt();
 
-            island = new int[w+1][h+1];
-            visit = new boolean[w+1][h+1];
+            island = new int[h][w];
+            visit = new boolean[h][w];
 
             count = 0;
 
             if(w == 0 && h == 0)
                 break;
             
-            for(int i = 0; i < w; i++)
+            for(int i = 0; i < h; i++)
             {
-                for(int j = 0; j < h; j++)
+                for(int j = 0; j < w; j++)
                 {
                     island[i][j] = sc.nextInt();
                 }
             }
 
-            for(int i = 0; i < w; i++)
+            for(int i = 0; i < h; i++)
             {
-                for(int j = 0; j < h; j++)
+                for(int j = 0; j < w; j++)
                 {
                     if(island[i][j] == 1 && !visit[i][j])
                     {
@@ -59,7 +59,8 @@ public class M4963 {
             int xx = x + dx[k];
             int yy = y + dy[k];
 
-            if(xx >= 0 && yy >= 0 && xx < w && yy < h)
+            
+            if(xx >= 0 && yy >= 0 && xx < h && yy < w)
             {
                 if(island[xx][yy] == 1 && !visit[xx][yy])
                 {
